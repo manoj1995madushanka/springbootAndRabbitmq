@@ -4,10 +4,6 @@ import com.rabbitmq.demo.domain.Person;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-
 @Service
 public class RabbitmqConsumer {
 
