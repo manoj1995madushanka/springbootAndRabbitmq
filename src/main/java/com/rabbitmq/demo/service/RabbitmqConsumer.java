@@ -29,10 +29,13 @@ public class RabbitmqConsumer {
      * */
     @RabbitListener(queues = "Mobile")
     public void getHeaderExchangeMessage(byte[] message) throws IOException, ClassNotFoundException {
+
+        // convert input stream to object
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(message);
         ObjectInput objectInput = new ObjectInputStream(byteArrayInputStream);
 
         Person person = (Person) objectInput.readObject();
+
         objectInput.close();
         byteArrayInputStream.close();
 
